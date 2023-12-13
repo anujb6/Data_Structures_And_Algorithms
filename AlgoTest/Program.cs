@@ -4,6 +4,7 @@ using AlgoTest.DataStructureAndAlgorithms.Backtracking;
 using AlgoTest.DataStructureAndAlgorithms.BitManipulation;
 using AlgoTest.DataStructureAndAlgorithms.DP_1D;
 using AlgoTest.DataStructureAndAlgorithms.DP_1D._2_D;
+using AlgoTest.DataStructureAndAlgorithms.Graphs;
 using AlgoTest.DataStructureAndAlgorithms.Graphs.Level2;
 using AlgoTest.DataStructureAndAlgorithms.Intervals;
 using AlgoTest.DataStructureAndAlgorithms.Linked_List;
@@ -17,9 +18,9 @@ public class Program
     public static void Main(string[] args)
     {
         int[] nums = { 5, 1, 2, 3, 4 };
-        int[] word1 = { 3, 2, 4, 1, 5 };
-        int[][] word2 = { new[] { 1, 3, 5, 7 }, new[] { 10, 11, 16, 20 }, new[] { 23, 30, 34, 60 }};
-        var data = SearchA2DMatrix.SearchMatrix(word2, 13);
+        int[] word1 = { 0, 1, 2, 4, 5, 7 };
+        int[][] word2 = { new[] { 1, 0 }, new[] { 0, 1 } }; //[1,4],[2,4],[3,1],[3,2]
+        var data = SummaryRange.SummaryRanges(word1);
         Console.WriteLine(data);
     }
 }
