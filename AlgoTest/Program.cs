@@ -1,6 +1,7 @@
 ﻿using AlgoTest.DataStructureAndAlgorithms.Algorithms;
 using AlgoTest.DataStructureAndAlgorithms.Arrays;
 using AlgoTest.DataStructureAndAlgorithms.Backtracking;
+using AlgoTest.DataStructureAndAlgorithms.Binary_trees;
 using AlgoTest.DataStructureAndAlgorithms.BitManipulation;
 using AlgoTest.DataStructureAndAlgorithms.DP_1D;
 using AlgoTest.DataStructureAndAlgorithms.DP_1D._2_D;
@@ -19,8 +20,16 @@ public class Program
     {
         int[] nums = { 5, 1, 2, 3, 4 };
         int[] word1 = { 0, 1, 2, 4, 5, 7 };
-        int[][] word2 = { new[] { 1, 0 }, new[] { 0, 1 } }; //[1,4],[2,4],[3,1],[3,2]
-        var data = SummaryRange.SummaryRanges(word1);
+        int[][] word2 = { new[] { 0, 1, 1 }, new[] { 1, 0, 1 }, new[] { 0, 0, 1 }  }; //[1,4],[2,4],[3,1],[3,2]
+        Node a = new(1);
+        a.left = new Node(2);
+        a.left.left = new Node(4);
+        a.left.right = new Node(5);
+        a.right = new Node(3);
+        a.right.left = new Node(6);
+        a.right.right = new Node(7);
+
+        var data = PopulatingNextRightPointersInEachNode.Connect(a);
         Console.WriteLine(data);
     }
 }
