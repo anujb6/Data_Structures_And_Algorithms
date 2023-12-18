@@ -29,24 +29,21 @@ namespace AlgoTest.DataStructureAndAlgorithms.Algorithms
                 }
 
 
-                if (plants[alice] > tempCapacityA)
+                tempCapacityA -= plants[alice];
+                if (tempCapacityA <= 0)
                 {
+                    tempCapacityA = capacityA;
                     count++;
-                    tempCapacityA = capacityA - plants[alice];
                 }
-                else
+                alice++;
+               
+                tempCapacityB -= plants[bob];
+                if (tempCapacityB <= 0)
                 {
-                    tempCapacityA -= plants[alice];
-                }
-                if (plants[bob] > tempCapacityB)
-                {
+                    tempCapacityB = capacityB;
                     count++;
-                    tempCapacityB = capacityB - plants[b];
                 }
-                else
-                {
-                    tempCapacityB -= plants[b];
-                }
+                bob--;
 
             }
 
