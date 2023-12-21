@@ -28,7 +28,6 @@ namespace AlgoTest.DataStructureAndAlgorithms.Algorithms
                     break;
                 }
 
-
                 tempCapacityA -= plants[alice];
                 if (tempCapacityA <= 0)
                 {

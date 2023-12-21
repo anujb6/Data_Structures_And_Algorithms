@@ -18,9 +18,9 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        int[] nums = { 5, 1, 2, 3, 4 };
-        int[] word1 = { 0, 1, 2, 4, 5, 7 };
-        int[][] word2 = { new[] { 0, 1, 1 }, new[] { 1, 0, 1 }, new[] { 0, 0, 1 }  }; //[1,4],[2,4],[3,1],[3,2]
+        int[] nums = { 1, 2, 4, 4, 5 };
+        int[] word1 = { 3, 2, 3 };
+        int[][] word2 = { new[] { 3, 1 }, new[] { 9, 0 }, new[] { 1, 0 }, new[] { 1, 4 }, new[] { 5, 3 }, new[] { 8, 8 } }; 
         Node a = new(1);
         a.left = new Node(2);
         a.left.left = new Node(4);
@@ -29,7 +29,14 @@ public class Program
         a.right.left = new Node(6);
         a.right.right = new Node(7);
 
-        var data = PopulatingNextRightPointersInEachNode.Connect(a);
+        IList<IList<string>> paths = new List<IList<string>>
+        {
+            new List<string> { "London", "New York" },
+            new List<string> { "New York", "Lima" },
+            new List<string> { "Lima", "Sao Paulo" }
+        };
+
+        var data = WidestVerticalAreaBetweenTwoPointsContainingNoPoints.MaxWidthOfVerticalArea(word2);
         Console.WriteLine(data);
     }
 }
