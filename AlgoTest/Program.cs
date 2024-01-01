@@ -11,6 +11,7 @@ using AlgoTest.DataStructureAndAlgorithms.Graphs.Level2;
 using AlgoTest.DataStructureAndAlgorithms.Intervals;
 using AlgoTest.DataStructureAndAlgorithms.Linked_List;
 using AlgoTest.DataStructureAndAlgorithms.MonotonicStack;
+using AlgoTest.DataStructureAndAlgorithms.Sliding_Window;
 using AlgoTest.DataStructureAndAlgorithms.Trie;
 using AlgoTest.Models;
 using AlgoTest.ProjectEuler;
@@ -20,8 +21,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        int[] nums = { 3 };
-        int[] word1 = { 2 };
+        int[] nums = { 10, 9, 8, 7 };
+        int[] word1 = { 5, 6, 7, 8 };
         int[][] word2 = { new[] { 3, 3, 0 }, new[] { 1, 2, 0 }, new[] { 0, 3, 1 }, new[] { 0, 3, 2 }, new[] { 0, 4, 1 }}; 
         TreeNode a = new(2);
         a.left = new TreeNode(2);
@@ -45,7 +46,7 @@ public class Program
         };
 /*        foreach(var path in directions)
         {*/
-            var data = TheLatestTimeToCatchABus.LatestTimeCatchTheBus(nums, word1, 1);
+            var data = AssignCookies.FindContentChildren(nums, word1);
             Console.WriteLine(data);
 /*        }*/
     }
