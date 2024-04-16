@@ -51,7 +51,7 @@ public class Program
         };
         /*        foreach(var path in directions)
                 {*/
-        var data = ClimbingStairs.ClimbStairs(3);
+        var data = MaximumNestingDepthParentheses.MaxDepth("(1)+((2))+(((3)))");
         Console.WriteLine(data);
     }
 }
