@@ -12,6 +12,7 @@ using AlgoTest.DataStructureAndAlgorithms.Intervals;
 using AlgoTest.DataStructureAndAlgorithms.Linked_List;
 using AlgoTest.DataStructureAndAlgorithms.MonotonicStack;
 using AlgoTest.DataStructureAndAlgorithms.Sliding_Window;
+using AlgoTest.DataStructureAndAlgorithms.strings;
 using AlgoTest.DataStructureAndAlgorithms.Trie;
 using AlgoTest.Models;
 using AlgoTest.ProjectEuler;
@@ -49,9 +50,12 @@ public class Program
             "1111",
             "10010100"
         };
-        /*        foreach(var path in directions)
-                {*/
-        var data = MaximumNestingDepthParentheses.MaxDepth("(1)+((2))+(((3)))");
+
+        string s = "aadsfasf absbs bbab cadsfafs";
+        List<string> dictionary = new () { "a", "b", "c" };
+
+        var data = ReplaceWords.ReplaceWords1(dictionary, s);
+
         Console.WriteLine(data);
     }
 }
