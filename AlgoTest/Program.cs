@@ -13,6 +13,7 @@ using AlgoTest.DataStructureAndAlgorithms.Linked_List;
 using AlgoTest.DataStructureAndAlgorithms.MonotonicStack;
 using AlgoTest.DataStructureAndAlgorithms.Sliding_Window;
 using AlgoTest.DataStructureAndAlgorithms.strings;
+using AlgoTest.DataStructureAndAlgorithms.Strings;
 using AlgoTest.DataStructureAndAlgorithms.Trie;
 using AlgoTest.Models;
 using AlgoTest.ProjectEuler;
@@ -24,8 +25,7 @@ public class Program
     {
         string[] nums = { "Mary", "John", "Emma" };
         int[] word1 = { 7, 4, 3, 9, 1, 8, 5, 2, 6 };
-        //[1,3],[2,3],[3,6],[5,6],[5,7],[4,5],[4,8],[4,9],[10,4],[10,9]
-        int[][] word2 = { new[] { 1, 3 }, new[] { 2, 3 }, new[] { 3, 6 }, new[] { 5, 6 }, new[] { 5, 7 }, new[] { 4, 5 }, new[] { 4, 8 }, new[] { 4, 9 }, new[] { 10, 4 }, new[] { 10, 9 } }; 
+        int[][] word2 = { new[] { 1, 3 }, new[] { 2, 3 }, new[] { 3, 6 }, new[] { 5, 6 }, new[] { 5, 7 }, new[] { 4, 5 }, new[] { 4, 8 }, new[] { 4, 9 }, new[] { 10, 4 }, new[] { 10, 9 } };
         TreeNode a = new(1);
         a.left = new(5);
         a.left.right = new(4);
@@ -51,11 +51,26 @@ public class Program
             "10010100"
         };
 
-        string s = "aadsfasf absbs bbab cadsfafs";
-        List<string> dictionary = new () { "a", "b", "c" };
+        int[] a1 = { 28, 6, 22, 8, 44, 17 };
+        int[] a2 = { 22, 28, 8, 6 };
 
-        var data = ReplaceWords.ReplaceWords1(dictionary, s);
+        char[][] board = new char[][]
+        {
+            new char[] { '1', '2', '.', '.', '3', '.', '.', '.', '.' },
+            new char[] { '4', '.', '.', '5', '.', '.', '.', '.', '.' },
+            new char[] { '.', '9', '1', '.', '.', '.', '.', '.', '3' },
+            new char[] { '5', '.', '.', '.', '6', '.', '.', '.', '4' },
+            new char[] { '.', '.', '.', '8', '.', '3', '.', '.', '5' },
+            new char[] { '7', '.', '.', '.', '2', '.', '.', '.', '6' },
+            new char[] { '.', '.', '.', '.', '.', '.', '2', '.', '.' },
+            new char[] { '.', '.', '.', '4', '1', '9', '.', '.', '8' },
+            new char[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
+        };
 
+        string s = "((";
+
+        int[] seats = { 4, 1, 5, 9 }, students = { 1, 3, 2, 6 };
+        var data  = MinimumNumberOfMovesToSeatEveryone.MinMovesToSeat(seats, students);
         Console.WriteLine(data);
     }
 }
