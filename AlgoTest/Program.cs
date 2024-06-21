@@ -1,22 +1,7 @@
 ﻿using AlgoTest.DataStructureAndAlgorithms.Algorithms;
 using AlgoTest.DataStructureAndAlgorithms.Arrays;
-using AlgoTest.DataStructureAndAlgorithms.Backtracking;
-using AlgoTest.DataStructureAndAlgorithms.Binary_trees;
-using AlgoTest.DataStructureAndAlgorithms.BitManipulation;
-using AlgoTest.DataStructureAndAlgorithms.DP._2_D;
-using AlgoTest.DataStructureAndAlgorithms.DP_1D;
-using AlgoTest.DataStructureAndAlgorithms.DP_1D._2_D;
-using AlgoTest.DataStructureAndAlgorithms.Graphs;
-using AlgoTest.DataStructureAndAlgorithms.Graphs.Level2;
-using AlgoTest.DataStructureAndAlgorithms.Intervals;
-using AlgoTest.DataStructureAndAlgorithms.Linked_List;
-using AlgoTest.DataStructureAndAlgorithms.MonotonicStack;
-using AlgoTest.DataStructureAndAlgorithms.Sliding_Window;
-using AlgoTest.DataStructureAndAlgorithms.strings;
-using AlgoTest.DataStructureAndAlgorithms.Strings;
-using AlgoTest.DataStructureAndAlgorithms.Trie;
-using AlgoTest.Models;
-using AlgoTest.ProjectEuler;
+using AlgoTest.DataStructureAndAlgorithms.BinarySearch;
+using AlgoTest.DataStructureAndAlgorithms.Stack;
 using AlgoTest.Structures;
 
 public class Program
@@ -67,10 +52,13 @@ public class Program
             new char[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
         };
 
-        string s = "((";
+        string[] s = { "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+" };
 
-        int[] seats = { 4, 1, 5, 9 }, students = { 1, 3, 2, 6 };
-        var data  = MinimumNumberOfMovesToSeatEveryone.MinMovesToSeat(seats, students);
-        Console.WriteLine(data);
+        int[] heights = { 1, 2, 3, 4, 7 }, speed = { 2, 2, 1, 1 }, worker = { 92, 10, 85, 84, 82 };
+
+        int target = 10;
+
+        var data  = MagneticForceBetweenTwoBalls.MaxDistance(heights,2);
+        Console.Write(data);
     }
 }
