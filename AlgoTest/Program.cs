@@ -54,11 +54,35 @@ public class Program
 
         string[] s = { "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+" };
 
-        int[] heights = { 1, 2, 3, 4, 7 }, speed = { 2, 2, 1, 1 }, worker = { 92, 10, 85, 84, 82 };
+        int[] heights = { 4, 2, 3 }, speed = { 2, 2, 1, 1 }, worker = { 92, 10, 85, 84, 82 };
 
         int target = 10;
+        List<List<int>> arr = new List<List<int>>() { 
+            new() { 1, 1, 1, 0, 0, 0 },
+            new() { 0, 1, 0, 0, 0, 0 },
+            new() { 1, 1, 1, 0, 0, 0 },
+            new() { 0, 0, 2, 4, 4, 0 },
+            new() { 0, 0, 0, 2, 0, 0 },
+            new() { 0, 0, 1, 2, 4, 0 },
 
-        var data  = MagneticForceBetweenTwoBalls.MaxDistance(heights,2);
+        };
+
+    /*    var data  = TrappingRainWater.Trap(heights);
         Console.Write(data);
+*/
+        int sum = 0;
+
+        for (int i=0; i<arr.Count; i++)
+        {
+            for(int j=0; j < arr[i].Count; j++)
+            {
+                if (i+2 < arr.Count && j + 2 < arr[i].Count)
+                    sum = Math.Max(arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2], sum);
+                else
+                    break;
+            }
+        }
+
+        Console.Write(sum);
     }
 }
