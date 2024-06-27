@@ -1,5 +1,6 @@
 ﻿using AlgoTest.DataStructureAndAlgorithms.Algorithms;
 using AlgoTest.DataStructureAndAlgorithms.Arrays;
+using AlgoTest.DataStructureAndAlgorithms.Binary_trees;
 using AlgoTest.DataStructureAndAlgorithms.BinarySearch;
 using AlgoTest.DataStructureAndAlgorithms.Stack;
 using AlgoTest.Structures;
@@ -10,16 +11,6 @@ public class Program
     {
         string[] nums = { "Mary", "John", "Emma" };
         int[] word1 = { 7, 4, 3, 9, 1, 8, 5, 2, 6 };
-        int[][] word2 = { new[] { 1, 3 }, new[] { 2, 3 }, new[] { 3, 6 }, new[] { 5, 6 }, new[] { 5, 7 }, new[] { 4, 5 }, new[] { 4, 8 }, new[] { 4, 9 }, new[] { 10, 4 }, new[] { 10, 9 } };
-        TreeNode a = new(1);
-        a.left = new(5);
-        a.left.right = new(4);
-        a.left.right.left = new(9);
-        a.left.right.right = new(2);
-        a.right = new(3);
-        a.right.right = new(6);
-        a.right.left = new(10);
-
 
         IList<IList<string>> paths = new List<IList<string>>
         {
@@ -56,7 +47,6 @@ public class Program
 
         int[] heights = { 4, 2, 3 }, speed = { 2, 2, 1, 1 }, worker = { 92, 10, 85, 84, 82 };
 
-        int target = 10;
         List<List<int>> arr = new List<List<int>>() { 
             new() { 1, 1, 1, 0, 0, 0 },
             new() { 0, 1, 0, 0, 0, 0 },
@@ -67,22 +57,57 @@ public class Program
 
         };
 
-    /*    var data  = TrappingRainWater.Trap(heights);
-        Console.Write(data);
-*/
-        int sum = 0;
+        //root = [1,null,2,null,3,null,4,null,null]
+        TreeNode a = new(1);
+        a.right = new(2);
+        a.right.right = new(3);
+        a.right.right.right = new(4);
+        a.right.right.right.right = new(5);
 
-        for (int i=0; i<arr.Count; i++)
+        TreeNode b = new(2500);
+        b.left = new(5000);
+        b.right = new(7500);
+        b.right.right = new(10000);
+        b.right.right.right = new(12500);
+        b.left.right = new(15000);
+        b.left.right.right = new (17500);
+
+        int[] piles = { 25, 10, 23, 4 };
+        int h = 4;
+
+        // find the maximum
+        // define left and right
+        // keep a variable min to keep track of hours 
+        // use while loop to loop through left to right
+        // inside while loop use mid to loop through piles and calculate the hours
+        // after loop is finished check if min is small or bigger
+
+
+        int left = 1;
+        int right = piles.Max();
+        int minSpeed = right;
+
+
+        while(left < right)
         {
-            for(int j=0; j < arr[i].Count; j++)
+            int mid = (left + right) / 2;
+            int hoursTaken = 0;
+
+            foreach (var pile in piles)
             {
-                if (i+2 < arr.Count && j + 2 < arr[i].Count)
-                    sum = Math.Max(arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2], sum);
-                else
-                    break;
+                hoursTaken += (int)Math.Ceiling((double)pile / mid); 
             }
+
+            if (hoursTaken <= h)
+            {
+                minSpeed = mid;
+                right = mid - 1;
+            }
+            else
+                left = mid + 1;
         }
 
-        Console.Write(sum);
+        Console.WriteLine(minSpeed);
+
     }
 }
