@@ -2,8 +2,14 @@
 using AlgoTest.DataStructureAndAlgorithms.Arrays;
 using AlgoTest.DataStructureAndAlgorithms.Binary_trees;
 using AlgoTest.DataStructureAndAlgorithms.BinarySearch;
+using AlgoTest.DataStructureAndAlgorithms.Graphs;
+using AlgoTest.DataStructureAndAlgorithms.Graphs.Level1;
+using AlgoTest.DataStructureAndAlgorithms.Linked_List;
 using AlgoTest.DataStructureAndAlgorithms.Stack;
+using AlgoTest.Models;
 using AlgoTest.Structures;
+using System.Data;
+using System.Diagnostics;
 
 public class Program
 {
@@ -57,57 +63,55 @@ public class Program
 
         };
 
-        //root = [1,null,2,null,3,null,4,null,null]
-        TreeNode a = new(1);
-        a.right = new(2);
-        a.right.right = new(3);
-        a.right.right.right = new(4);
-        a.right.right.right.right = new(5);
+        int[][] edges = new int[][]{
+            new int[] {0, 1},
+            new int[] {1, 2},
+            new int[] {2, 3},
+            new int[] {0, 2},
+            new int[] {1, 3},
+            new int[] {2, 4},
+        };
 
-        TreeNode b = new(2500);
-        b.left = new(5000);
-        b.right = new(7500);
-        b.right.right = new(10000);
-        b.right.right.right = new(12500);
-        b.left.right = new(15000);
-        b.left.right.right = new (17500);
+        int[] prices = { 0, 1, 5, 10, 14 };
+        int[] nums2 = { 2, 2 };
 
-        int[] piles = { 25, 10, 23, 4 };
-        int h = 4;
+        string s1 = "aa", t = "aa";
 
-        // find the maximum
-        // define left and right
-        // keep a variable min to keep track of hours 
-        // use while loop to loop through left to right
-        // inside while loop use mid to loop through piles and calculate the hours
-        // after loop is finished check if min is small or bigger
+        ListNode head = new(0);
+        ListNode one = new(1);
+        ListNode two = new(2);
+        ListNode three = new(3);
+        ListNode four = new(0);
+        ListNode five = new(2);
+        ListNode six = new(2);
+        ListNode seven = new(0);
 
+        head.next = one;
+        one.next = two;
+        two.next = three;/*
+        three.next = four;
+        four.next = five;
+        five.next = six;
+        six.next = seven;*/
 
-        int left = 1;
-        int right = piles.Max();
-        int minSpeed = right;
+        int[] nums1 = { 1, 2, 1, 0, 4, 2, 6 };
+        int k = 3;
 
+        /*var data = SlidingWindowMaximum.MaxSlidingWindow(nums1, k);*/
 
-        while(left < right)
+        List<ListNode> listReverse = new();
+
+        ListNode curr = head;
+        while (curr != null)
         {
-            int mid = (left + right) / 2;
-            int hoursTaken = 0;
-
-            foreach (var pile in piles)
-            {
-                hoursTaken += (int)Math.Ceiling((double)pile / mid); 
-            }
-
-            if (hoursTaken <= h)
-            {
-                minSpeed = mid;
-                right = mid - 1;
-            }
-            else
-                left = mid + 1;
+            listReverse.Insert(0, curr);
+            curr = curr.next;
         }
 
-        Console.WriteLine(minSpeed);
+        for(int i=0; i<listReverse.Count-1; i++)
+        {
+            listReverse[i].next = listReverse[i + 1];
+        }
 
     }
 }

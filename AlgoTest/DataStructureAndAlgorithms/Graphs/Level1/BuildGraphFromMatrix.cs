@@ -14,7 +14,7 @@ namespace AlgoTest.DataStructureAndAlgorithms.Graphs.Level1
 
             for (var i = 0; i < matrix.Count; i++)
             {
-                adjList[i] = new List<int>(); // Initialize an empty list for each node.
+                adjList[i] = new List<int>(); 
 
                 for (var j = 0; j < matrix[i].Count; j++)
                 {
