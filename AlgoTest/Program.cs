@@ -1,15 +1,6 @@
-﻿using AlgoTest.DataStructureAndAlgorithms.Algorithms;
-using AlgoTest.DataStructureAndAlgorithms.Arrays;
-using AlgoTest.DataStructureAndAlgorithms.Binary_trees;
-using AlgoTest.DataStructureAndAlgorithms.BinarySearch;
-using AlgoTest.DataStructureAndAlgorithms.Graphs;
-using AlgoTest.DataStructureAndAlgorithms.Graphs.Level1;
-using AlgoTest.DataStructureAndAlgorithms.Linked_List;
-using AlgoTest.DataStructureAndAlgorithms.Stack;
+﻿using AlgoTest.ds_algo.Arrays;
+using AlgoTest.ds_algo.Binary_trees;
 using AlgoTest.Models;
-using AlgoTest.Structures;
-using System.Data;
-using System.Diagnostics;
 
 public class Program
 {
@@ -64,54 +55,64 @@ public class Program
         };
 
         int[][] edges = new int[][]{
-            new int[] {0, 1},
-            new int[] {1, 2},
-            new int[] {2, 3},
-            new int[] {0, 2},
-            new int[] {1, 3},
-            new int[] {2, 4},
+            new int[] {3, 7, 8},
+            new int[] {9, 11, 13},
+            new int[] {15, 16, 17}
         };
+
+        var data = LuckyNumbersInAMatrix.LuckyNumbers(edges);
 
         int[] prices = { 0, 1, 5, 10, 14 };
         int[] nums2 = { 2, 2 };
 
         string s1 = "aa", t = "aa";
 
-        ListNode head = new(0);
-        ListNode one = new(1);
-        ListNode two = new(2);
-        ListNode three = new(3);
-        ListNode four = new(0);
-        ListNode five = new(2);
-        ListNode six = new(2);
-        ListNode seven = new(0);
+        //head = [1,2,3,4], n = 2
 
-        head.next = one;
+        ListNode one = new(9);
+        ListNode two = new(9);
+        ListNode three = new(9);
+        ListNode four = new(9);
+        ListNode five = new(9);
+        ListNode six = new(9);
+        ListNode seven = new(9);
+        
+        ListNode eight = new(9);
+        ListNode nine = new(9);
+        ListNode ten = new(9);
+        ListNode eleven = new(9);
+
+        /*        ListNode six = new(2);
+                ListNode seven = new(1);
+                ListNode eight = new(5);*/
+
         one.next = two;
-        two.next = three;/*
+        two.next = three;
         three.next = four;
         four.next = five;
         five.next = six;
-        six.next = seven;*/
+        six.next = seven;
 
+        eight.next = nine;
+        nine.next = ten;
+        ten.next = eleven;
+       
+
+        
         int[] nums1 = { 1, 2, 1, 0, 4, 2, 6 };
         int k = 3;
 
-        /*var data = SlidingWindowMaximum.MaxSlidingWindow(nums1, k);*/
-
-        List<ListNode> listReverse = new();
-
-        ListNode curr = head;
-        while (curr != null)
+        int[][] customers = new int[][]
         {
-            listReverse.Insert(0, curr);
-            curr = curr.next;
-        }
+            new int[] {20, 15, 1},
+            new int[] {20, 17, 0},
+            new int[] {50, 20, 1},
+            new int[] {50, 80, 0},
+            new int[] {80, 19, 1}
+        };
 
-        for(int i=0; i<listReverse.Count-1; i++)
-        {
-            listReverse[i].next = listReverse[i + 1];
-        }
+        string[] logs = { "d1/", "d2/", "./", "d3/", "../", "d31/" };
+
 
     }
 }

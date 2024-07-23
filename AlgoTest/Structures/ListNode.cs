@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlgoTest.DataStructureAndAlgorithms.Binary_trees;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,13 @@ namespace AlgoTest.Models
     {
         public int val;
         public ListNode? next;
-        public ListNode(int val, ListNode? next = null)
+        public ListNode? random;
+
+        public ListNode(int _val)
         {
-            this.val = val;
-            this.next = next;
+            val = _val;
+            next = null;
+            random = null;
         }
     }
 }
