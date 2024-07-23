@@ -113,8 +113,6 @@ public class Program
 
         string[] logs = { "d1/", "d2/", "./", "d3/", "../", "d31/" };
 
-        //Hello this is a test commit
-
 
     }
 }
